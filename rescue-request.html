@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Rescue Request - PawConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-text">PawConnect</a>
+        </div>
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="rescue-request-main">
+        <section class="rescue-form-section">
+            <h1>Submit Rescue Request</h1>
+            <p>Please provide the following details about the animal in need</p>
+            
+            <form id="rescueForm" class="rescue-form">
+                <div class="form-group">
+                    <label for="mediaUpload">Upload Photo/Video of the Animal*</label>
+                    <input type="file" 
+                           id="mediaUpload" 
+                           accept=".jpg,.jpeg,.png,.mp4" 
+                           required>
+                    <p class="file-requirements">Maximum file size: 2MB. Accepted formats: JPEG, PNG, MP4</p>
+                </div>
+
+                <h3 class="form-section-title">Address Details</h3>
+
+                <div class="form-group">
+                    <label for="streetAddress1">Street Address Line 1*</label>
+                    <input type="text" 
+                           id="streetAddress1"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="streetAddress2">Street Address Line 2</label>
+                    <input type="text" 
+                           id="streetAddress2">
+                </div>
+
+                <div class="address-grid">
+                    <div class="form-group">
+                        <label for="city">City*</label>
+                        <input type="text" 
+                               id="city"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State/Province*</label>
+                        <input type="text" 
+                               id="state"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zipCode">ZIP/Postal Code*</label>
+                        <input type="text" 
+                               id="zipCode"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country*</label>
+                        <input type="text" 
+                               id="country"
+                               required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="landmark">Landmark/Area (Optional)</label>
+                    <input type="text" 
+                           id="landmark"
+                           placeholder="Any nearby landmark to help us locate the animal">
+                </div>
+
+                <div class="form-group">
+                    <label for="reporterContact">Your Contact Information*</label>
+                    <input type="tel" 
+                           id="reporterContact" 
+                           placeholder="Your phone number"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="alternateContact">Alternate Contact Number (Optional)</label>
+                    <input type="tel" 
+                           id="alternateContact" 
+                           placeholder="Alternate phone number">
+                </div>
+
+                <button type="submit" class="btn primary">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <p>Email: isahildhiman@gmail.com</p>
+                <p>Phone: +91 7837501592</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="rescue-request.js"></script>
+</body>
+</html> 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect - Vaccination & Sterilization</title>
+    <link rel="stylesheet" href="vaccination.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">PawConnect</div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Contact</a>
+            <button class="donate-btn">Donate Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Vaccination & Sterilization for Cats & Dogs</h1>
+            <p class="hero-quote">"Promoting animal health through timely care - Because every pet deserves a healthy life."</p>
+        </div>
+    </section>
+
+    <!-- Services Options Section -->
+    <section class="services-section">
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="clip1.jpg" alt="Vaccination Icon" class="service-icon">
+                <h3>Vaccination</h3>
+                <p>Protect your pet with essential vaccinations. Our comprehensive vaccination program ensures your pet stays healthy and protected against common diseases.</p>
+                <button class="service-btn">Schedule Vaccination</button>
+            </div>
+            <div class="service-card">
+                <img src="clip2.jpg" alt="Sterilization Icon" class="service-icon">
+                <h3>Sterilization</h3>
+                <p>Help control pet population and improve your pet's health with our professional sterilization services. Safe and caring environment guaranteed.</p>
+                <button class="service-btn">Schedule Sterilization</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centers Modal -->
+    <div class="centers-modal" id="centersModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nearby Centers</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="search-section">
+                    <input type="text" id="locationSearch" placeholder="Enter your location">
+                    <button class="locate-btn">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+                <div class="centers-list">
+                    <!-- Centers will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Center Card Template -->
+    <template id="centerCardTemplate">
+        <div class="center-card">
+            <div class="center-info">
+                <h3 class="center-name"></h3>
+                <div class="center-rating">
+                    <span class="stars"></span>
+                    <span class="rating-count"></span>
+                </div>
+                <p class="center-address"></p>
+                <div class="center-distance">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span></span>
+                </div>
+            </div>
+            <div class="service-info">
+                <div class="price-info">
+                    <span class="service-type"></span>
+                    <span class="price"></span>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="vaccination.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html> 

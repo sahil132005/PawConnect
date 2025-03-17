@@ -1,0 +1,1897 @@
+==== adoption.html ====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect - Adoption</title>
+    <link rel="stylesheet" href="adoption.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">PawConnect</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Contact</a>
+            <button class="filter-btn">Filters</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>🐾 Don't just make a difference.<br>Be the difference.<br>Adopt, don't shop. 🐾</h1>
+            <p class="hero-subtitle">Find your perfect companion today</p>
+            <button class="cta-button donate-btn">Support Our Mission</button>
+        </div>
+    </section>
+
+    <!-- Spacer for fixed navbar -->
+    <div style="height: 60px;"></div>
+
+    <!-- Animal Categories -->
+    <main class="content">
+        <!-- Dogs Section -->
+        <section class="category-row">
+            <h2 class="category-title">🐶 Dogs</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="dogs-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Cats Section -->
+        <section class="category-row">
+            <h2 class="category-title">🐱 Cats</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="cats-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Birds Section -->
+        <section class="category-row">
+            <h2 class="category-title">🐦 Birds</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="birds-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Rodents Section -->
+        <section class="category-row">
+            <h2 class="category-title">🐹 Rodents</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="rodents-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Others Section -->
+        <section class="category-row">
+            <h2 class="category-title">🦊 Others</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="others-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Donation Modal -->
+    <div class="donation-modal" id="donationModal">
+        <div class="donation-content">
+            <div class="donation-header">
+                <h2>Choose amount</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="donation-body">
+                <p class="donation-subtitle">Support someone's full potential today!</p>
+                
+                <div class="donation-type">
+                    <button class="type-btn active">One-time</button>
+                    <button class="type-btn">Monthly</button>
+                    <button class="type-btn">Annually</button>
+                </div>
+                
+                <div class="amount-grid">
+                    <button class="amount-btn" data-amount="25">USD$ 25</button>
+                    <button class="amount-btn" data-amount="50">USD$ 50</button>
+                    <button class="amount-btn" data-amount="100">USD$ 100</button>
+                    <button class="amount-btn" data-amount="250">USD$ 250</button>
+                </div>
+                
+                <div class="custom-amount">
+                    <input type="text" placeholder="USD$ Custom Amount" id="customAmount">
+                </div>
+                
+                <div class="donation-options">
+                    <label class="option">
+                        <input type="checkbox"> Dedicate my donation in honor or in memory of someone
+                    </label>
+                    <label class="option">
+                        <input type="checkbox"> Write us a comment
+                    </label>
+                    <label class="option">
+                        <input type="checkbox"> Display your donation & comment on the donor wall
+                    </label>
+                </div>
+                
+                <button class="next-btn">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="adoption.js"></script>
+</body>
+</html> 
+
+==== adoption.js ====
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for category rows
+    const scrollContainers = document.querySelectorAll('.scroll-container');
+    
+    scrollContainers.forEach(container => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let startY;
+        let initialScroll;
+
+        // Mouse Events
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.style.cursor = 'grabbing';
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            initialScroll = true;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch Events
+        container.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - container.offsetLeft;
+            startY = e.touches[0].pageY;
+            scrollLeft = container.scrollLeft;
+            initialScroll = true;
+        });
+
+        container.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            
+            const x = e.touches[0].pageX - container.offsetLeft;
+            const y = e.touches[0].pageY;
+            
+            // Check if scrolling horizontally or vertically
+            if (initialScroll) {
+                const deltaX = Math.abs(x - startX);
+                const deltaY = Math.abs(y - startY);
+                
+                if (deltaX > deltaY) {
+                    e.preventDefault(); // Prevent vertical scroll only if scrolling horizontally
+                }
+                initialScroll = false;
+            }
+            
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        });
+    });
+
+    // Lazy loading for images
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // Filter button functionality
+    const filterBtn = document.querySelector('.filter-btn');
+    filterBtn.addEventListener('click', () => {
+        // Create and show filter modal
+        const modal = document.createElement('div');
+        modal.className = 'filter-modal';
+        modal.innerHTML = `
+            <div class="filter-content">
+                <h3>Filter Pets</h3>
+                <div class="filter-options">
+                    <label>
+                        <input type="checkbox" name="age" value="young"> Young (0-2 years)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="age" value="adult"> Adult (2-8 years)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="gender" value="male"> Male
+                    </label>
+                    <label>
+                        <input type="checkbox" name="gender" value="female"> Female
+                    </label>
+                    <label>
+                        <input type="checkbox" name="vaccinated" value="true"> Vaccinated
+                    </label>
+                </div>
+                <button class="apply-filters">Apply Filters</button>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
+    });
+
+    // Smooth scroll function for category navigation
+    function smoothScrollTo(element, duration) {
+        const target = element.getBoundingClientRect().left;
+        const startPosition = element.parentElement.scrollLeft;
+        const distance = target - startPosition;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            element.parentElement.scrollLeft = run;
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    }
+
+    // Add scroll buttons to each category
+    document.querySelectorAll('.scroll-container').forEach(container => {
+        const leftBtn = document.createElement('button');
+        const rightBtn = document.createElement('button');
+        
+        leftBtn.className = 'scroll-indicator scroll-left';
+        rightBtn.className = 'scroll-indicator scroll-right';
+        
+        leftBtn.innerHTML = '←';
+        rightBtn.innerHTML = '→';
+        
+        container.appendChild(leftBtn);
+        container.appendChild(rightBtn);
+        
+        leftBtn.addEventListener('click', () => {
+            const scrollAmount = container.clientWidth * 0.8;
+            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        
+        rightBtn.addEventListener('click', () => {
+            const scrollAmount = container.clientWidth * 0.8;
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    });
+
+    // Add hover sound effect
+    const hoverSound = new Audio('hover.mp3'); // Add a subtle hover sound file
+    document.querySelectorAll('.pet-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        });
+    });
+
+    // Update the adoption button click handler
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('adopt-btn')) {
+            const petName = e.target.dataset.petName;
+            const petId = e.target.dataset.petId;
+            
+            // Create and show adoption modal
+            const modal = document.createElement('div');
+            modal.className = 'adoption-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Adopt ${petName}</h2>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pet-info-detailed">
+                            <h3>About ${petName}</h3>
+                            <div class="pet-stats">
+                                <span>Age: 2 years</span>
+                                <span>Gender: Male</span>
+                                <span>Vaccinated: Yes</span>
+                            </div>
+                            <p class="pet-description">
+                                ${petName} is a loving companion who's looking for a forever home. 
+                                Friendly with children and other pets, house-trained, and full of energy.
+                            </p>
+                        </div>
+                        <div class="adoption-steps">
+                            <h3>Next Steps</h3>
+                            <ol>
+                                <li>Schedule a meet-and-greet with ${petName}</li>
+                                <li>Complete background check</li>
+                                <li>Home visit assessment</li>
+                                <li>Finalize adoption</li>
+                            </ol>
+                        </div>
+                        <div class="cta-buttons">
+                            <button class="schedule-visit-btn">Schedule Visit</button>
+                            <button class="contact-shelter-btn">Contact Shelter</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Close modal functionality
+            const closeBtn = modal.querySelector('.close-modal');
+            closeBtn.addEventListener('click', () => modal.remove());
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.remove();
+            });
+
+            // Handle schedule visit button
+            const scheduleBtn = modal.querySelector('.schedule-visit-btn');
+            scheduleBtn.addEventListener('click', () => {
+                window.location.href = `/schedule-visit/${petId}`;
+            });
+
+            // Handle contact shelter button
+            const contactBtn = modal.querySelector('.contact-shelter-btn');
+            contactBtn.addEventListener('click', () => {
+                window.location.href = '/contact';
+            });
+        }
+    });
+
+    // Define the pet data
+    const petCategories = {
+        dogs: {
+            container: 'dogs-container',
+            names: ['Max', 'Rocky', 'Buddy', 'Charlie', 'Luna', 'Bailey'],
+            image: 'dog.jpg'
+        },
+        cats: {
+            container: 'cats-container',
+            names: ['Luna', 'Oliver', 'Milo', 'Lucy', 'Leo', 'Bella'],
+            image: 'cat.jpeg'
+        },
+        birds: {
+            container: 'birds-container',
+            names: ['Rio', 'Sky', 'Sunny', 'Blue', 'Angel', 'Phoenix'],
+            image: 'bird.jpg'
+        },
+        rodents: {
+            container: 'rodents-container',
+            names: ['Hoppy', 'Nibbles', 'Peanut', 'Cookie', 'Ginger', 'Oreo'],
+            image: 'rabbit.jpg'
+        },
+        others: {
+            container: 'others-container',
+            names: ['George', 'Ziggy', 'Coco', 'Mango', 'Kiwi', 'Banana'],
+            image: 'monkey.jpeg'
+        }
+    };
+
+    // Function to generate cards for a category
+    function generatePetCards(category, data) {
+        const container = document.getElementById(data.container);
+        if (!container) return;
+
+        const cardsHTML = Array(20).fill().map((_, i) => {
+            const name = data.names[i % data.names.length];
+            const age = (i % 3 + 1);
+            const gender = i % 2 ? 'Male' : 'Female';
+            const personality = ['Playful', 'Friendly', 'Gentle', 'Active', 'Calm'][i % 5];
+            const trained = i % 2 ? 'Yes' : 'In Training';
+            
+            return `
+                <div class="pet-card" data-type="${category}">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="${data.image}" alt="${category}" loading="lazy">
+                            <div class="card-overlay">
+                                <h3 class="pet-name" 
+                                    data-name="${name}"
+                                    data-age="${age}"
+                                    data-gender="${gender}"
+                                    data-personality="${personality}"
+                                    data-trained="${trained}"
+                                    data-image="${data.image}"
+                                    data-category="${category}"
+                                >${name}</h3>
+                                <p>${age} years old • ${gender}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        container.innerHTML = cardsHTML;
+
+        // Add click handlers for pet names
+        container.querySelectorAll('.pet-name').forEach(nameElement => {
+            nameElement.addEventListener('click', (e) => {
+                const data = e.target.dataset;
+                showPetDetails(data);
+            });
+        });
+    }
+
+    function showPetDetails(petData) {
+        const modal = document.createElement('div');
+        modal.className = 'pet-details-modal';
+        modal.innerHTML = `
+            <div class="pet-details-content">
+                <div class="pet-details-header">
+                    <h2>${petData.name}</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="pet-details-body">
+                    <img src="${petData.image}" alt="${petData.name}" class="pet-details-image">
+                    <div class="pet-details-info">
+                        <div class="pet-details-stats">
+                            <div class="stat-item">
+                                <strong>Age:</strong>
+                                <p>${petData.age} years</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Gender:</strong>
+                                <p>${petData.gender}</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Personality:</strong>
+                                <p>${petData.personality}</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Trained:</strong>
+                                <p>${petData.trained}</p>
+                            </div>
+                        </div>
+                        <p class="pet-description">
+                            Meet ${petData.name}, a ${petData.personality.toLowerCase()} ${petData.category} 
+                            looking for a loving forever home. ${petData.name} is ${petData.age} years old and 
+                            would make a perfect companion for ${petData.personality === 'Active' ? 
+                            'an active family' : 'any loving family'}.
+                        </p>
+                    </div>
+                    <div class="cta-buttons">
+                        <button class="schedule-visit-btn">Schedule a Visit</button>
+                        <button class="contact-shelter-btn">Contact Shelter</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+        
+        // Add animation class after a brief delay
+        setTimeout(() => modal.classList.add('active'), 10);
+
+        // Close modal functionality
+        const closeBtn = modal.querySelector('.close-modal');
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            setTimeout(() => modal.remove(), 300);
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                setTimeout(() => modal.remove(), 300);
+            }
+        });
+    }
+
+    // Generate cards for all categories
+    Object.entries(petCategories).forEach(([category, data]) => {
+        generatePetCards(category, data);
+    });
+
+    // Handle scroll buttons
+    document.querySelectorAll('.scroll-container').forEach(container => {
+        const leftBtn = container.querySelector('.scroll-left');
+        const rightBtn = container.querySelector('.scroll-right');
+        const cardContainer = container.querySelector('.pet-cards');
+
+        // Show/hide arrows based on scroll position
+        const updateArrowVisibility = () => {
+            leftBtn.style.opacity = cardContainer.scrollLeft > 0 ? '1' : '0';
+            rightBtn.style.opacity = 
+                (cardContainer.scrollLeft + cardContainer.clientWidth) < cardContainer.scrollWidth ? '1' : '0';
+        };
+
+        // Initial arrow visibility
+        updateArrowVisibility();
+
+        // Update arrows on scroll
+        cardContainer.addEventListener('scroll', updateArrowVisibility);
+
+        // Scroll buttons functionality
+        leftBtn.addEventListener('click', () => {
+            cardContainer.scrollBy({
+                left: -300,
+                behavior: 'smooth'
+            });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            cardContainer.scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
+        });
+    });
+}); 
+
+==== donation.html ====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect - Give for a Better Life Today</title>
+    <link rel="stylesheet" href="donation.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-text">PawConnect</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button class="filter-btn">Filters</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="slogan-container">
+            <h1>Give for a Better Life Today</h1>
+            <p class="hero-description">Your donation helps us make effective and sustainable change in how animals are cared for in shelters, zoos, sanctuaries, and healthcare organizations.</p>
+            <p class="hero-subtitle">We drive change by educating those who provide daily care.<br>Your donation makes this possible.</p>
+        </div>
+    </div>
+
+    <!-- Donation Form Section -->
+    <div class="donation-container">
+        <div class="donation-box">
+            <div class="donation-header">
+                <h2>Choose amount</h2>
+                <div class="progress-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%"></div>
+                </div>
+                <p class="goal-text">$65,000 raised of $100,000 goal</p>
+            </div>
+
+            <div class="donation-body">
+                <p class="support-text">Support someone's full potential today!</p>
+
+                <div class="donation-type">
+                    <button class="type-btn active">One-time</button>
+                    <button class="type-btn">Monthly</button>
+                    <button class="type-btn">Annually</button>
+                </div>
+
+                <div class="amount-grid">
+                    <button class="amount-btn" data-amount="25">USD$ 25</button>
+                    <button class="amount-btn" data-amount="50">USD$ 50</button>
+                    <button class="amount-btn" data-amount="100">USD$ 100</button>
+                    <button class="amount-btn" data-amount="250">USD$ 250</button>
+                </div>
+
+                <div class="custom-amount">
+                    <input type="text" placeholder="USD$ Custom Amount" id="customAmount">
+                </div>
+
+                <div class="impact-preview">
+                    Your donation will help provide care and support for animals in need
+                </div>
+
+                <div class="donation-options">
+                    <label class="option">
+                        <input type="checkbox" id="dedicateCheckbox"> Dedicate my donation in honor or in memory of someone
+                    </label>
+                    <div class="dedication-form" style="display: none;">
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="dedicationType" value="honor" checked> In honor of
+                            </label>
+                            <label>
+                                <input type="radio" name="dedicationType" value="memory"> In memory of
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Honoree Name</label>
+                            <input type="text" class="form-input" required>
+                            <span class="error-message">This field is required</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Person to notify</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Recipient Name</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="radio-group">
+                            <label>Notify this person by:</label>
+                            <label>
+                                <input type="radio" name="notifyMethod" value="email" checked> Email
+                            </label>
+                            <label>
+                                <input type="radio" name="notifyMethod" value="postal"> Postal mail
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Recipient Email</label>
+                            <input type="email" class="form-input" required>
+                            <span class="error-message">This field is required</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Message for the recipient (optional)</label>
+                            <textarea class="form-input" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <label class="option">
+                        <input type="checkbox" id="commentCheckbox"> Write us a comment
+                    </label>
+                    <div class="comment-form" style="display: none;">
+                        <div class="form-group">
+                            <label>Your comment</label>
+                            <textarea class="form-input" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <label class="option">
+                        <input type="checkbox"> Display your donation & comment on the donor wall
+                    </label>
+                </div>
+
+                <button class="next-btn">Next →</button>
+
+                <div class="payment-methods">
+                    <img src="visa.png" alt="Visa">
+                    <img src="mastercard.png" alt="Mastercard">
+                    <img src="amex.png" alt="American Express">
+                    <img src="paypal.png" alt="PayPal">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Information Form -->
+    <div class="information-form" style="display: none;">
+        <div class="donation-box">
+            <div class="donation-header">
+                <h2>Information</h2>
+                <div class="progress-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            
+            <div class="donation-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="anonymousCheckbox">
+                        Make donation anonymous
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="companyCheckbox">
+                        This donation is on behalf of a company
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Country</label>
+                    <select class="form-input" required>
+                        <option value="">Select your country</option>
+                        <option value="IN">India</option>
+                        <!-- Add more countries -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-input" placeholder="Street address" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Address line 2">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Postal Code</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>State / Province</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        Subscribe to our mailing list to receive updates from us. You can unsubscribe anytime.
+                    </label>
+                </div>
+                
+                <button class="next-btn">Continue to Payment →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Information Form -->
+    <div class="payment-form" style="display: none;">
+        <div class="donation-box">
+            <div class="donation-header">
+                <h2>Payment Information</h2>
+                <div class="progress-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot active"></div>
+                </div>
+                <div class="payment-summary">
+                    <p class="amount-display">Total: $<span id="totalAmount">0</span></p>
+                </div>
+            </div>
+            
+            <div class="donation-body">
+                <div class="card-preview">
+                    <div class="card-front">
+                        <div class="card-type">
+                            <img src="visa.png" alt="Card Type" id="cardTypeIcon">
+                        </div>
+                        <div class="card-number" id="cardNumberDisplay">•••• •••• •••• ••••</div>
+                        <div class="card-details">
+                            <div class="card-holder">
+                                <label>Card Holder</label>
+                                <div id="cardHolderDisplay">Your Name</div>
+                            </div>
+                            <div class="card-expires">
+                                <label>Expires</label>
+                                <div id="cardExpiryDisplay">MM/YY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <div class="card-input-wrapper">
+                        <input type="text" 
+                               class="form-input" 
+                               id="cardNumber"
+                               placeholder="1234 5678 9012 3456" 
+                               maxlength="19"
+                               required>
+                        <div class="card-icons">
+                            <img src="visa.png" alt="Visa">
+                            <img src="mastercard.png" alt="Mastercard">
+                            <img src="amex.png" alt="Amex">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-details-row">
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" class="form-input" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" class="form-input" placeholder="123" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Name on Card</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                
+                <button class="next-btn">Complete Donation →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="donation.js"></script>
+</body>
+</html>
+
+
+==== donation.js ====
+
+document.addEventListener('DOMContentLoaded', () => {
+    const amountButtons = document.querySelectorAll('.amount-btn');
+    const typeButtons = document.querySelectorAll('.type-btn');
+    const customAmountInput = document.getElementById('customAmount');
+    const impactPreview = document.querySelector('.impact-preview');
+
+    // Handle amount selection
+    amountButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            amountButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            customAmountInput.value = '';
+            updateImpactPreview(btn.dataset.amount);
+        });
+    });
+
+    // Handle donation type selection
+    typeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            typeButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+    // Handle custom amount input
+    customAmountInput.addEventListener('input', (e) => {
+        amountButtons.forEach(btn => btn.classList.remove('active'));
+        updateImpactPreview(e.target.value);
+    });
+
+    function updateImpactPreview(amount) {
+        if (!amount) return;
+        amount = parseInt(amount);
+        let impact = '';
+        
+        if (amount >= 250) {
+            impact = `Your $${amount} donation can provide comprehensive care for multiple animals for a month!`;
+        } else if (amount >= 100) {
+            impact = `Your $${amount} donation can provide medical care and food for an animal for two weeks!`;
+        } else if (amount >= 50) {
+            impact = `Your $${amount} donation can feed and care for an animal for a week!`;
+        } else {
+            impact = `Your $${amount} donation helps provide essential care for animals in need!`;
+        }
+        
+        impactPreview.textContent = impact;
+        impactPreview.style.opacity = '0';
+        setTimeout(() => {
+            impactPreview.style.opacity = '1';
+        }, 50);
+    }
+
+    // Handle dedication checkbox
+    const dedicateCheckbox = document.getElementById('dedicateCheckbox');
+    const dedicationForm = document.querySelector('.dedication-form');
+    
+    dedicateCheckbox.addEventListener('change', () => {
+        dedicationForm.style.display = dedicateCheckbox.checked ? 'block' : 'none';
+    });
+
+    // Handle comment checkbox
+    const commentCheckbox = document.getElementById('commentCheckbox');
+    const commentForm = document.querySelector('.comment-form');
+    
+    commentCheckbox.addEventListener('change', () => {
+        commentForm.style.display = commentCheckbox.checked ? 'block' : 'none';
+    });
+
+    // Handle required fields
+    const requiredInputs = document.querySelectorAll('.form-input[required]');
+    
+    requiredInputs.forEach(input => {
+        input.addEventListener('blur', () => {
+            const errorMessage = input.nextElementSibling;
+            if (!input.value.trim()) {
+                errorMessage.classList.add('visible');
+            } else {
+                errorMessage.classList.remove('visible');
+            }
+        });
+    });
+
+    // Handle next button click
+    const nextBtn = document.querySelector('.next-btn');
+    const donationForm = document.querySelector('.donation-box');
+    const informationForm = document.querySelector('.information-form');
+    
+    nextBtn.addEventListener('click', () => {
+        // Only validate that an amount is selected
+        const selectedAmount = document.querySelector('.amount-btn.active');
+        const customAmount = document.getElementById('customAmount').value;
+        
+        if (!selectedAmount && !customAmount) {
+            alert('Please select or enter a donation amount');
+            return;
+        }
+        
+        donationForm.style.display = 'none';
+        informationForm.style.display = 'block';
+    });
+
+    // Handle information form submission
+    const paymentForm = document.querySelector('.payment-form');
+    const continueToPaymentBtn = informationForm.querySelector('.next-btn');
+    
+    continueToPaymentBtn.addEventListener('click', () => {
+        const infoInputs = informationForm.querySelectorAll('.form-input[required]');
+        let isValid = true;
+        
+        infoInputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+            }
+        });
+        
+        if (isValid) {
+            informationForm.style.display = 'none';
+            paymentForm.style.display = 'block';
+        }
+    });
+
+    // Handle card input preview
+    const cardNumber = document.getElementById('cardNumber');
+    const cardNumberDisplay = document.getElementById('cardNumberDisplay');
+    const cardHolderDisplay = document.getElementById('cardHolderDisplay');
+    const cardExpiryDisplay = document.getElementById('cardExpiryDisplay');
+    const totalAmountSpan = document.getElementById('totalAmount');
+    
+    // Format card number as user types
+    cardNumber.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        let formattedValue = '';
+        
+        for (let i = 0; i < value.length; i++) {
+            if (i > 0 && i % 4 === 0) {
+                formattedValue += ' ';
+            }
+            formattedValue += value[i];
+        }
+        
+        e.target.value = formattedValue;
+        cardNumberDisplay.textContent = formattedValue || '•••• •••• •••• ••••';
+    });
+
+    // Update card holder name
+    document.querySelector('input[name="cardHolder"]').addEventListener('input', (e) => {
+        cardHolderDisplay.textContent = e.target.value || 'Your Name';
+    });
+
+    // Update expiry date
+    document.querySelector('input[placeholder="MM/YY"]').addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 2) {
+            value = value.slice(0, 2) + '/' + value.slice(2, 4);
+        }
+        e.target.value = value;
+        cardExpiryDisplay.textContent = value || 'MM/YY';
+    });
+
+    // Update total amount display
+    function updateTotalAmount() {
+        const selectedAmount = document.querySelector('.amount-btn.active');
+        const customAmount = document.getElementById('customAmount').value;
+        const amount = selectedAmount ? selectedAmount.dataset.amount : (customAmount || '0');
+        totalAmountSpan.textContent = amount;
+    }
+
+    // Add event listeners for amount updates
+    document.querySelectorAll('.amount-btn').forEach(btn => {
+        btn.addEventListener('click', updateTotalAmount);
+    });
+
+    document.getElementById('customAmount').addEventListener('input', updateTotalAmount);
+});
+
+
+==== index.html ====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect - Transforming Animal Rescue</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-text">PawConnect</a>
+        </div>
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#" class="nav-link">Contact</a>
+                <button class="filter-btn">Filters</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <h1>Welcome to PawConnect</h1>
+                <h2>Transforming Animal Rescue Through Technology</h2>
+                <p>Join us in our mission to rescue, care for, and rehome stray animals. Together, we can make a difference.</p>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2 id="services">Our Services</h2>
+            <div class="features-grid">
+                <a href="rescue-request.html" class="feature-card">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Rescue Requests</h3>
+                    <p>Easily report and track rescue cases</p>
+                </a>
+                <a href="vaccination.html" class="feature-card">
+                    <i class="fas fa-syringe"></i>
+                    <h3>Sterilization & Vaccination</h3>
+                    <p>Promoting animal health through timely care</p>
+                </a>
+                <a href="adoption.html" class="feature-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Adoption</h3>
+                    <p>Connecting stray animals with loving homes</p>
+                </a>
+                <a href="donation.html" class="feature-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Donations</h3>
+                    <p>Support us in making a difference</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Join Our Community</h2>
+            <div class="cta-buttons">
+                <button class="btn primary" id="signUpBtn">Sign Up</button>
+                <button class="btn secondary">Log In</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signUpModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Your Account</h2>
+            
+            <form id="signUpForm" class="signup-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name / NGO Name*</label>
+                    <input type="text" id="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressLine1">Street Address Line 1*</label>
+                    <input type="text" id="addressLine1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressLine2">Street Address Line 2</label>
+                    <input type="text" id="addressLine2">
+                </div>
+
+                <div class="address-grid">
+                    <div class="form-group">
+                        <label for="city">City*</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State/Province*</label>
+                        <input type="text" id="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zipCode">ZIP/Postal Code*</label>
+                        <input type="text" id="zipCode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country*</label>
+                        <input type="text" id="country" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="landmark">Landmark/Area (Optional)</label>
+                    <input type="text" id="landmark">
+                </div>
+
+                <div class="form-group">
+                    <label for="profileImage">Profile Image (Optional)</label>
+                    <input type="file" id="profileImage" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password*</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="privacy" required>
+                    <label for="privacy">I agree to the Privacy Policy</label>
+                </div>
+
+                <button type="submit" class="btn primary">Create Account</button>
+
+                <div class="social-signup">
+                    <p>Or sign up with</p>
+                    <button type="button" class="google-btn">
+                        <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google">
+                        Sign up with Google
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <p>Email: isahildhiman.com</p>
+                <p>Phone: +91 7837501592</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chat-widget">
+        <button class="chat-toggle">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>PawConnect Assistant</h3>
+                <button class="close-chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatOutput">
+                <div class="welcome-message">
+                    Hello! How can I help you today?
+                </div>
+            </div>
+            <div class="preset-prompts">
+                <button class="prompt-btn" data-prompt="How do I submit a rescue request?">
+                    How do I submit a rescue request?
+                </button>
+                <button class="prompt-btn" data-prompt="How can I adopt a pet?">
+                    How can I adopt a pet?
+                </button>
+                <button class="prompt-btn" data-prompt="What are the adoption requirements?">
+                    What are the adoption requirements?
+                </button>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
+
+==== index.js ====
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle active state for services link
+    const servicesLink = document.querySelector('.nav-link[href="#services"]');
+    const servicesSection = document.getElementById('services');
+
+    if (servicesLink && servicesSection) {
+        // Update active state on scroll
+        window.addEventListener('scroll', () => {
+            const rect = servicesSection.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom >= 100) {
+                servicesLink.classList.add('active');
+            } else {
+                servicesLink.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll with offset
+        servicesLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const yOffset = -80; // Adjust based on header height
+            const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        });
+    }
+}); 
+
+==== rescue-request.html ====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Rescue Request - PawConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-text">PawConnect</a>
+        </div>
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="rescue-request-main">
+        <section class="rescue-form-section">
+            <h1>Submit Rescue Request</h1>
+            <p>Please provide the following details about the animal in need</p>
+            
+            <form id="rescueForm" class="rescue-form">
+                <div class="form-group">
+                    <label for="mediaUpload">Upload Photo/Video of the Animal*</label>
+                    <input type="file" 
+                           id="mediaUpload" 
+                           accept=".jpg,.jpeg,.png,.mp4" 
+                           required>
+                    <p class="file-requirements">Maximum file size: 2MB. Accepted formats: JPEG, PNG, MP4</p>
+                </div>
+
+                <h3 class="form-section-title">Address Details</h3>
+
+                <div class="form-group">
+                    <label for="streetAddress1">Street Address Line 1*</label>
+                    <input type="text" 
+                           id="streetAddress1"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="streetAddress2">Street Address Line 2</label>
+                    <input type="text" 
+                           id="streetAddress2">
+                </div>
+
+                <div class="address-grid">
+                    <div class="form-group">
+                        <label for="city">City*</label>
+                        <input type="text" 
+                               id="city"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State/Province*</label>
+                        <input type="text" 
+                               id="state"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zipCode">ZIP/Postal Code*</label>
+                        <input type="text" 
+                               id="zipCode"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country*</label>
+                        <input type="text" 
+                               id="country"
+                               required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="landmark">Landmark/Area (Optional)</label>
+                    <input type="text" 
+                           id="landmark"
+                           placeholder="Any nearby landmark to help us locate the animal">
+                </div>
+
+                <div class="form-group">
+                    <label for="reporterContact">Your Contact Information*</label>
+                    <input type="tel" 
+                           id="reporterContact" 
+                           placeholder="Your phone number"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="alternateContact">Alternate Contact Number (Optional)</label>
+                    <input type="tel" 
+                           id="alternateContact" 
+                           placeholder="Alternate phone number">
+                </div>
+
+                <button type="submit" class="btn primary">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <p>Email: isahildhiman@gmail.com</p>
+                <p>Phone: +91 7837501592</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="rescue-request.js"></script>
+</body>
+</html> 
+
+==== rescue-request.js ====
+
+document.addEventListener('DOMContentLoaded', () => {
+    const rescueForm = document.getElementById('rescueForm');
+    const mediaUpload = document.getElementById('mediaUpload');
+
+    // File size validation
+    mediaUpload.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            // Check file size (2MB = 2 * 1024 * 1024 bytes)
+            if (file.size > 2 * 1024 * 1024) {
+                alert('File size must be less than 2MB');
+                e.target.value = ''; // Clear the file input
+                return;
+            }
+
+            // Check file type
+            const validTypes = ['image/jpeg', 'image/png', 'video/mp4'];
+            if (!validTypes.includes(file.type)) {
+                alert('Please upload a valid file type (JPEG, PNG, or MP4)');
+                e.target.value = ''; // Clear the file input
+                return;
+            }
+        }
+    });
+
+    // Form submission
+    rescueForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(rescueForm);
+        
+        // Here you would typically send the data to your server
+        // For now, we'll just show a success message
+        alert('Rescue request submitted successfully! We will contact you shortly.');
+        rescueForm.reset();
+    });
+}); 
+
+==== script.js ====
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Animate hamburger to X
+        const spans = hamburger.querySelectorAll('span');
+        spans.forEach(span => span.classList.toggle('active'));
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('active');
+            const spans = hamburger.querySelectorAll('span');
+            spans.forEach(span => span.classList.remove('active'));
+        }
+    });
+
+    // Modal functionality
+    const modal = document.getElementById('signUpModal');
+    const signUpBtn = document.getElementById('signUpBtn');
+    const closeModal = document.querySelector('.close-modal');
+    const signUpForm = document.getElementById('signUpForm');
+
+    signUpBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    signUpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        console.log('Form submitted');
+    });
+}); 
+
+// Chatbot functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const chatToggle = document.querySelector('.chat-toggle');
+    const chatContainer = document.querySelector('.chat-container');
+    const closeChat = document.querySelector('.close-chat');
+    const promptBtns = document.querySelectorAll('.prompt-btn');
+    const userInput = document.getElementById('userInput');
+
+    chatToggle.addEventListener('click', () => {
+        chatContainer.classList.add('active');
+        chatToggle.style.display = 'none';
+    });
+
+    closeChat.addEventListener('click', () => {
+        chatContainer.classList.remove('active');
+        chatToggle.style.display = 'block';
+    });
+
+    promptBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            userInput.value = btn.dataset.prompt;
+            sendMessage();
+        });
+    });
+});
+
+async function sendMessage() {
+    const userMessage = document.getElementById("userInput").value;
+    if (!userMessage.trim()) return;
+    
+    const chatOutput = document.getElementById("chatOutput");
+    
+    // Add user message to chat
+    const userDiv = document.createElement('div');
+    userDiv.className = 'user-message';
+    userDiv.textContent = userMessage;
+    chatOutput.appendChild(userDiv);
+    
+    try {
+        const response = await fetch("http://127.0.0.1:5000/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userMessage }),
+        });
+
+        const data = await response.json();
+        
+        // Add bot response to chat
+        const botDiv = document.createElement('div');
+        botDiv.className = 'bot-message';
+        // Format the response with proper line breaks and spacing
+        const formattedResponse = data.response
+            .replace(/\n\n/g, '\n')  // Replace double line breaks with single
+            .replace(/([.!?])\s+/g, '$1\n')  // Add line break after sentences
+            .replace(/\*\*/g, '')  // Remove any remaining asterisks
+            .trim();  // Remove extra whitespace
+        botDiv.textContent = formattedResponse;
+        chatOutput.appendChild(botDiv);
+    } catch (error) {
+        // Add error message to chat
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'bot-message error';
+        errorDiv.textContent = "Sorry, I'm having trouble connecting right now. Please try again later.";
+        chatOutput.appendChild(errorDiv);
+    }
+    
+    // Clear input and scroll to bottom
+    document.getElementById("userInput").value = '';
+    chatOutput.scrollTop = chatOutput.scrollHeight;
+}
+
+==== vaccination.html ====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect - Vaccination & Sterilization</title>
+    <link rel="stylesheet" href="vaccination.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">PawConnect</div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Contact</a>
+            <button class="donate-btn">Donate Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Vaccination & Sterilization for Cats & Dogs</h1>
+            <p class="hero-quote">"Promoting animal health through timely care - Because every pet deserves a healthy life."</p>
+        </div>
+    </section>
+
+    <!-- Services Options Section -->
+    <section class="services-section">
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="clip1.jpg" alt="Vaccination Icon" class="service-icon">
+                <h3>Vaccination</h3>
+                <p>Protect your pet with essential vaccinations. Our comprehensive vaccination program ensures your pet stays healthy and protected against common diseases.</p>
+                <button class="service-btn">Schedule Vaccination</button>
+            </div>
+            <div class="service-card">
+                <img src="clip2.jpg" alt="Sterilization Icon" class="service-icon">
+                <h3>Sterilization</h3>
+                <p>Help control pet population and improve your pet's health with our professional sterilization services. Safe and caring environment guaranteed.</p>
+                <button class="service-btn">Schedule Sterilization</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centers Modal -->
+    <div class="centers-modal" id="centersModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nearby Centers</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="search-section">
+                    <input type="text" id="locationSearch" placeholder="Enter your location">
+                    <button class="locate-btn">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+                <div class="centers-list">
+                    <!-- Centers will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Center Card Template -->
+    <template id="centerCardTemplate">
+        <div class="center-card">
+            <div class="center-info">
+                <h3 class="center-name"></h3>
+                <div class="center-rating">
+                    <span class="stars"></span>
+                    <span class="rating-count"></span>
+                </div>
+                <p class="center-address"></p>
+                <div class="center-distance">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span></span>
+                </div>
+            </div>
+            <div class="service-info">
+                <div class="price-info">
+                    <span class="service-type"></span>
+                    <span class="price"></span>
+                </div>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="vaccination.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html> 
+
+==== vaccination.js ====
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('centersModal');
+    const vaccBtn = document.querySelector('.service-card:first-child .service-btn');
+    const sterilBtn = document.querySelector('.service-card:last-child .service-btn');
+    const closeBtn = document.querySelector('.close-modal');
+    const centersList = document.querySelector('.centers-list');
+    const template = document.getElementById('centerCardTemplate');
+
+    // Sample data - Replace with actual API call
+    const centers = [
+        {
+            name: "PawCare Veterinary Clinic",
+            rating: 4.8,
+            ratingCount: 524,
+            address: "123 Pet Street, Downtown",
+            distance: "1.2 km",
+            vaccination: 75,
+            sterilization: 150
+        },
+        {
+            name: "Animal Wellness Center",
+            rating: 4.6,
+            ratingCount: 328,
+            address: "456 Health Avenue, Uptown",
+            distance: "2.5 km",
+            vaccination: 65,
+            sterilization: 140
+        },
+        {
+            name: "City Pet Hospital",
+            rating: 4.9,
+            ratingCount: 892,
+            address: "789 Care Lane, Midtown",
+            distance: "3.1 km",
+            vaccination: 80,
+            sterilization: 160
+        }
+    ];
+
+    function showModal(serviceType) {
+        modal.classList.add('active');
+        populateCenters(serviceType);
+    }
+
+    function hideModal() {
+        modal.classList.remove('active');
+    }
+
+    function populateCenters(serviceType) {
+        centersList.innerHTML = '';
+        centers.forEach(center => {
+            const card = template.content.cloneNode(true);
+            
+            card.querySelector('.center-name').textContent = center.name;
+            card.querySelector('.stars').innerHTML = '★'.repeat(Math.floor(center.rating));
+            card.querySelector('.rating-count').textContent = `(${center.ratingCount})`;
+            card.querySelector('.center-address').textContent = center.address;
+            card.querySelector('.center-distance span').textContent = center.distance;
+            
+            const price = serviceType === 'vaccination' ? center.vaccination : center.sterilization;
+            card.querySelector('.service-type').textContent = serviceType === 'vaccination' ? 'Vaccination' : 'Sterilization';
+            card.querySelector('.price').textContent = `$${price}`;
+
+            centersList.appendChild(card);
+        });
+    }
+
+    vaccBtn.addEventListener('click', () => showModal('vaccination'));
+    sterilBtn.addEventListener('click', () => showModal('sterilization'));
+    closeBtn.addEventListener('click', hideModal);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) hideModal();
+    });
+
+    // Location search functionality
+    const searchInput = document.getElementById('locationSearch');
+    const locateBtn = document.querySelector('.locate-btn');
+
+    locateBtn.addEventListener('click', () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                // Here you would typically make an API call to get nearby centers
+                console.log(position.coords.latitude, position.coords.longitude);
+            });
+        }
+    });
+
+    searchInput.addEventListener('input', (e) => {
+        // Here you would typically implement search/filter functionality
+        console.log(e.target.value);
+    });
+}); 
+

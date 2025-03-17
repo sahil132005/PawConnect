@@ -1,0 +1,22 @@
+.paw-print {
+    position: fixed;
+    pointer-events: none;
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    z-index: 9999;
+    transform: translate(-50%, -50%) rotate(var(--rotation));
+    transition: opacity 0.3s ease;
+}
+
+.paw-print svg {
+    width: 100%;
+    height: 100%;
+    fill: #FF8C42;
+    opacity: 1;
+}
+
+/* Progressive fade-out effect for trailing paws */
+.paw-print:nth-last-child(2) { opacity: 0.8; }
+.paw-print:nth-last-child(3) { opacity: 0.6; }
+.paw-print:nth-last-child(4) { opacity: 0.4; } 

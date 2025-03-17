@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect - Transforming Animal Rescue</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="paw-cursor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-text">PawConnect</a>
+        </div>
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#" class="nav-link">Contact</a>
+                <button class="filter-btn">Filters</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <h1>Welcome to PawConnect</h1>
+                <h2>Transforming Animal Rescue Through Technology</h2>
+                <p>Join us in our mission to rescue, care for, and rehome stray animals. Together, we can make a difference.</p>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2 id="services">Our Services</h2>
+            <div class="features-grid">
+                <a href="rescue-request.html" class="feature-card">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Rescue Requests</h3>
+                    <p>Easily report and track rescue cases</p>
+                </a>
+                <a href="vaccination.html" class="feature-card">
+                    <i class="fas fa-syringe"></i>
+                    <h3>Sterilization & Vaccination</h3>
+                    <p>Promoting animal health through timely care</p>
+                </a>
+                <a href="adoption.html" class="feature-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Adoption</h3>
+                    <p>Connecting stray animals with loving homes</p>
+                </a>
+                <a href="donation.html" class="feature-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Donations</h3>
+                    <p>Support us in making a difference</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Join Our Community</h2>
+            <div class="cta-buttons">
+                <button class="btn primary" id="signUpBtn">Sign Up</button>
+                <button class="btn secondary">Log In</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signUpModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Your Account</h2>
+            
+            <form id="signUpForm" class="signup-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name / NGO Name*</label>
+                    <input type="text" id="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressLine1">Street Address Line 1*</label>
+                    <input type="text" id="addressLine1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressLine2">Street Address Line 2</label>
+                    <input type="text" id="addressLine2">
+                </div>
+
+                <div class="address-grid">
+                    <div class="form-group">
+                        <label for="city">City*</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State/Province*</label>
+                        <input type="text" id="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zipCode">ZIP/Postal Code*</label>
+                        <input type="text" id="zipCode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country*</label>
+                        <input type="text" id="country" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="landmark">Landmark/Area (Optional)</label>
+                    <input type="text" id="landmark">
+                </div>
+
+                <div class="form-group">
+                    <label for="profileImage">Profile Image (Optional)</label>
+                    <input type="file" id="profileImage" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password*</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="privacy" required>
+                    <label for="privacy">I agree to the Privacy Policy</label>
+                </div>
+
+                <button type="submit" class="btn primary">Create Account</button>
+
+                <div class="social-signup">
+                    <p>Or sign up with</p>
+                    <button type="button" class="google-btn">
+                        <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google">
+                        Sign up with Google
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <p>Email: isahildhiman.com</p>
+                <p>Phone: +91 7837501592</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chat-widget">
+        <button class="chat-toggle">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>PawConnect Assistant</h3>
+                <button class="close-chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatOutput">
+                <div class="welcome-message">
+                    Hello! How can I help you today?
+                </div>
+            </div>
+            <div class="preset-prompts">
+                <button class="prompt-btn" data-prompt="How do I submit a rescue request?">
+                    How do I submit a rescue request?
+                </button>
+                <button class="prompt-btn" data-prompt="How can I adopt a pet?">
+                    How can I adopt a pet?
+                </button>
+                <button class="prompt-btn" data-prompt="What are the adoption requirements?">
+                    What are the adoption requirements?
+                </button>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="paw-cursor.js"></script>
+</body>
+</html>

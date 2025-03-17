@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect - Give for a Better Life Today</title>
+    <link rel="stylesheet" href="donation.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-text">PawConnect</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button class="filter-btn">Filters</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="slogan-container">
+            <h1>Give for a Better Life Today</h1>
+            <p class="hero-description">Your donation helps us make effective and sustainable change in how animals are cared for in shelters, zoos, sanctuaries, and healthcare organizations.</p>
+            <p class="hero-subtitle">We drive change by educating those who provide daily care.<br>Your donation makes this possible.</p>
+        </div>
+    </div>
+
+    <!-- Donation Form Section -->
+    <div class="donation-container">
+        <div class="donation-box">
+            <div class="donation-header">
+                <h2>Choose amount</h2>
+                <div class="progress-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%"></div>
+                </div>
+                <p class="goal-text">$65,000 raised of $100,000 goal</p>
+            </div>
+
+            <div class="donation-body">
+                <p class="support-text">Support someone's full potential today!</p>
+
+                <div class="donation-type">
+                    <button class="type-btn active">One-time</button>
+                    <button class="type-btn">Monthly</button>
+                    <button class="type-btn">Annually</button>
+                </div>
+
+                <div class="amount-grid">
+                    <button class="amount-btn" data-amount="25">USD$ 25</button>
+                    <button class="amount-btn" data-amount="50">USD$ 50</button>
+                    <button class="amount-btn" data-amount="100">USD$ 100</button>
+                    <button class="amount-btn" data-amount="250">USD$ 250</button>
+                </div>
+
+                <div class="custom-amount">
+                    <input type="text" placeholder="USD$ Custom Amount" id="customAmount">
+                </div>
+
+                <div class="impact-preview">
+                    Your donation will help provide care and support for animals in need
+                </div>
+
+                <div class="donation-options">
+                    <label class="option">
+                        <input type="checkbox" id="dedicateCheckbox"> Dedicate my donation in honor or in memory of someone
+                    </label>
+                    <div class="dedication-form" style="display: none;">
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="dedicationType" value="honor" checked> In honor of
+                            </label>
+                            <label>
+                                <input type="radio" name="dedicationType" value="memory"> In memory of
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Honoree Name</label>
+                            <input type="text" class="form-input" required>
+                            <span class="error-message">This field is required</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Person to notify</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Recipient Name</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="radio-group">
+                            <label>Notify this person by:</label>
+                            <label>
+                                <input type="radio" name="notifyMethod" value="email" checked> Email
+                            </label>
+                            <label>
+                                <input type="radio" name="notifyMethod" value="postal"> Postal mail
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Recipient Email</label>
+                            <input type="email" class="form-input" required>
+                            <span class="error-message">This field is required</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Message for the recipient (optional)</label>
+                            <textarea class="form-input" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <label class="option">
+                        <input type="checkbox" id="commentCheckbox"> Write us a comment
+                    </label>
+                    <div class="comment-form" style="display: none;">
+                        <div class="form-group">
+                            <label>Your comment</label>
+                            <textarea class="form-input" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <label class="option">
+                        <input type="checkbox"> Display your donation & comment on the donor wall
+                    </label>
+                </div>
+
+                <button class="next-btn">Next →</button>
+
+                <div class="payment-methods">
+                    <img src="visa.png" alt="Visa">
+                    <img src="mastercard.png" alt="Mastercard">
+                    <img src="amex.png" alt="American Express">
+                    <img src="paypal.png" alt="PayPal">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Information Form -->
+    <div class="information-form" style="display: none;">
+        <div class="donation-box">
+            <div class="donation-header">
+                <h2>Information</h2>
+                <div class="progress-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            
+            <div class="donation-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="anonymousCheckbox">
+                        Make donation anonymous
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="companyCheckbox">
+                        This donation is on behalf of a company
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Country</label>
+                    <select class="form-input" required>
+                        <option value="">Select your country</option>
+                        <option value="IN">India</option>
+                        <!-- Add more countries -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-input" placeholder="Street address" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Address line 2">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Postal Code</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>State / Province</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        Subscribe to our mailing list to receive updates from us. You can unsubscribe anytime.
+                    </label>
+                </div>
+                
+                <button class="next-btn">Continue to Payment →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Information Form -->
+    <div class="payment-form" style="display: none;">
+        <div class="donation-box">
+            <div class="donation-header">
+                <h2>Payment Information</h2>
+                <div class="progress-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot active"></div>
+                </div>
+                <div class="payment-summary">
+                    <p class="amount-display">Total: $<span id="totalAmount">0</span></p>
+                </div>
+            </div>
+            
+            <div class="donation-body">
+                <div class="card-preview">
+                    <div class="card-front">
+                        <div class="card-type">
+                            <img src="visa.png" alt="Card Type" id="cardTypeIcon">
+                        </div>
+                        <div class="card-number" id="cardNumberDisplay">•••• •••• •••• ••••</div>
+                        <div class="card-details">
+                            <div class="card-holder">
+                                <label>Card Holder</label>
+                                <div id="cardHolderDisplay">Your Name</div>
+                            </div>
+                            <div class="card-expires">
+                                <label>Expires</label>
+                                <div id="cardExpiryDisplay">MM/YY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <div class="card-input-wrapper">
+                        <input type="text" 
+                               class="form-input" 
+                               id="cardNumber"
+                               placeholder="1234 5678 9012 3456" 
+                               maxlength="19"
+                               required>
+                        <div class="card-icons">
+                            <img src="visa.png" alt="Visa">
+                            <img src="mastercard.png" alt="Mastercard">
+                            <img src="amex.png" alt="Amex">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-details-row">
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" class="form-input" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" class="form-input" placeholder="123" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Name on Card</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                
+                <button class="next-btn">Complete Donation →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="donation.js"></script>
+</body>
+</html>

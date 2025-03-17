@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect - Adoption</title>
+    <link rel="stylesheet" href="adoption.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">PawConnect</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Contact</a>
+            <button class="filter-btn">Filters</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>🐾 Don't just make a difference.<br>Be the difference.<br>Adopt, don't shop. 🐾</h1>
+            <p class="hero-subtitle">Find your perfect companion today</p>
+            <button class="cta-button donate-btn">Support Our Mission</button>
+        </div>
+    </section>
+
+    <!-- Spacer for fixed navbar -->
+    <div style="height: 60px;"></div>
+
+    <!-- Animal Categories -->
+    <main class="content">
+        <!-- Dogs Section -->
+        <section class="category-row">
+            <h2 class="category-title">🐶 Dogs</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="dogs-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Cats Section -->
+        <section class="category-row">
+            <h2 class="category-title">🐱 Cats</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="cats-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Birds Section -->
+        <section class="category-row">
+            <h2 class="category-title">🐦 Birds</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="birds-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Rodents Section -->
+        <section class="category-row">
+            <h2 class="category-title">🐹 Rodents</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="rodents-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Others Section -->
+        <section class="category-row">
+            <h2 class="category-title">🦊 Others</h2>
+            <div class="scroll-container">
+                <button class="scroll-indicator scroll-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <div class="pet-cards" id="others-container">
+                    <!-- Cards will be inserted here by JavaScript -->
+                </div>
+                <button class="scroll-indicator scroll-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Donation Modal -->
+    <div class="donation-modal" id="donationModal">
+        <div class="donation-content">
+            <div class="donation-header">
+                <h2>Choose amount</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="donation-body">
+                <p class="donation-subtitle">Support someone's full potential today!</p>
+                
+                <div class="donation-type">
+                    <button class="type-btn active">One-time</button>
+                    <button class="type-btn">Monthly</button>
+                    <button class="type-btn">Annually</button>
+                </div>
+                
+                <div class="amount-grid">
+                    <button class="amount-btn" data-amount="25">USD$ 25</button>
+                    <button class="amount-btn" data-amount="50">USD$ 50</button>
+                    <button class="amount-btn" data-amount="100">USD$ 100</button>
+                    <button class="amount-btn" data-amount="250">USD$ 250</button>
+                </div>
+                
+                <div class="custom-amount">
+                    <input type="text" placeholder="USD$ Custom Amount" id="customAmount">
+                </div>
+                
+                <div class="donation-options">
+                    <label class="option">
+                        <input type="checkbox"> Dedicate my donation in honor or in memory of someone
+                    </label>
+                    <label class="option">
+                        <input type="checkbox"> Write us a comment
+                    </label>
+                    <label class="option">
+                        <input type="checkbox"> Display your donation & comment on the donor wall
+                    </label>
+                </div>
+                
+                <button class="next-btn">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="adoption.js"></script>
+</body>
+</html> 
