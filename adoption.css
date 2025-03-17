@@ -67,7 +67,7 @@ body {
 /* Hero Section */
 .hero {
     height: 70vh;
-    background: url('download.jpeg') center/cover no-repeat;
+    background: url('adoption_hero.webp') center/cover no-repeat;
     position: relative;
 }
 
@@ -100,6 +100,9 @@ body {
     color: var(--white);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     font-family: 'Playfair Display', serif;
+    opacity: 0;
+    animation: textFadeIn 0.8s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
 .hero-subtitle {
@@ -108,6 +111,9 @@ body {
     margin-bottom: 2rem;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     font-family: 'Montserrat', sans-serif;
+    opacity: 0;
+    animation: textFadeIn 0.8s ease-out forwards;
+    animation-delay: 0.6s;
 }
 
 .cta-button {
@@ -120,12 +126,41 @@ body {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    animation: pulse 2s infinite;
+    animation: buttonFadeIn 2s infinite;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: textFadeIn 0.8s ease-out forwards, buttonPulse 2s infinite;
+    animation-delay: 0.9s;
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .cta-button:hover {
